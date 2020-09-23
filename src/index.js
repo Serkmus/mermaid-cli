@@ -61,7 +61,10 @@ if (configFile) {
   checkConfigFile(configFile)
   mermaidConfig = Object.assign(mermaidConfig, JSON.parse(fs.readFileSync(configFile, 'utf-8')))
 }
-let puppeteerConfig = {}
+let puppeteerConfig = {
+    "args": [
+        "--no-sandbox"
+    ]};
 if (puppeteerConfigFile) {
   checkConfigFile(puppeteerConfigFile)
   puppeteerConfig = JSON.parse(fs.readFileSync(puppeteerConfigFile, 'utf-8'))
